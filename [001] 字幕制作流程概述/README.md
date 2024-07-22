@@ -1,3 +1,6 @@
+## 流程介绍
+### 先轴后译流程
+先轴后译需要翻译者学会Aegisub的基本使用
 ```mermaid
 sequenceDiagram
     title 先轴后译流程
@@ -26,6 +29,7 @@ sequenceDiagram
     压制 ->> 发布: 封装&内嵌 --> 发布
     deactivate 压制
 ```
+### 先译后轴流程
 ```mermaid
 sequenceDiagram
     title 先译后轴流程
@@ -55,7 +59,6 @@ sequenceDiagram
     压制 ->> 发布: 封装&内嵌 --> 发布
     deactivate 压制
 ```
-
 
 ## 各环节工作内容概述
 ### 源
