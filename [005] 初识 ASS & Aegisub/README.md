@@ -67,14 +67,14 @@ YCbCr Matrix: None
 ```
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 ```
-这行以"Format:"作为开头，代表着这行记录着这个表的格式，也就是说这里记录着表的每列的类型是啥，用逗号分隔——第一列的类型是Name，第二列的类型是Fontname，以此类推。  
+这行以`Format:`作为开头，代表着这行记录着这个表的格式，也就是说这里记录着表的每列的类型是啥，用逗号分隔——第一列的类型是Name，第二列的类型是Fontname，以此类推。  
 
 再看这个表的内容部分：
 ```
 Style: Default,Arial,48,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,2,2,10,10,10,1
 Style: ABC,宋体,64,&H00FFFFFF,&H000000FF,&H42424242,&H00000000,0,0,0,0,100,100,0,0,1,3,0,2,0,0,40,0
 ```
-每行以"Style:"作为开头，代表这行是一个样式，比如第一行样式的Name是Default，Fontname是Arial，以此类推；  
+每行以`Style:`作为开头，代表这行是一个样式，比如第一行样式的Name是Default，Fontname是Arial，以此类推；  
 第二行样式的Name是ABC，Fontname是宋体……
 
 > **好在我们不需要在记事本里更改样式，如下图所示，Aegisub的样式编辑器提供了更改这些样式的值的GUI**  
@@ -103,7 +103,7 @@ Dialogue: 0,0:00:09.00,0:00:11.00,Default,,0,0,0,,
 Dialogue: 0,0:00:11.00,0:00:13.00,Default,,0,0,0,,
 Dialogue: 0,0:00:13.00,0:00:15.00,Default,,0,0,0,,
 ```
-例如"Default"这个内容就对应着"Style"这个类型，也就是样式名，代表着这行以这个样式作为基础渲染。  
+例如`Default`这个内容就对应着`Style`这个类型，也就是样式名，代表着这行以这个样式作为基础渲染。  
 
 > **行首为`Dialogue`表示这行会正常渲染，如果在Aegisub里将这行注释掉，如下图所示：**  
 > ![CommentLineinAegisub.avif](./Media/CommentLineinAegisub.avif)
