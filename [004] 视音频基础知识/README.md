@@ -1,15 +1,15 @@
 ## 目录
-* [概述](https://github.com/CheeseAni/Subtitle-Production-Tutorial/tree/main/%5B004%5D%20%E8%A7%86%E9%9F%B3%E9%A2%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86#%E6%A6%82%E8%BF%B0)
-* [词典](https://github.com/CheeseAni/Subtitle-Production-Tutorial/tree/main/%5B004%5D%20%E8%A7%86%E9%9F%B3%E9%A2%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86#%E8%AF%8D%E5%85%B8)
-* [封装](https://github.com/CheeseAni/Subtitle-Production-Tutorial/tree/main/%5B004%5D%20%E8%A7%86%E9%9F%B3%E9%A2%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86#%E5%B0%81%E8%A3%85)
-* [视频](https://github.com/CheeseAni/Subtitle-Production-Tutorial/tree/main/%5B004%5D%20%E8%A7%86%E9%9F%B3%E9%A2%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86#%E8%A7%86%E9%A2%91)
-  * [图片压缩](https://github.com/CheeseAni/Subtitle-Production-Tutorial/tree/main/%5B004%5D%20%E8%A7%86%E9%9F%B3%E9%A2%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86#%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9)
-  * [视频压缩](https://github.com/CheeseAni/Subtitle-Production-Tutorial/tree/main/%5B004%5D%20%E8%A7%86%E9%9F%B3%E9%A2%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86#%E8%A7%86%E9%A2%91%E5%8E%8B%E7%BC%A9)
-* [音频](https://github.com/CheeseAni/Subtitle-Production-Tutorial/tree/main/%5B004%5D%20%E8%A7%86%E9%9F%B3%E9%A2%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86#%E9%9F%B3%E9%A2%91)
-* [字幕](https://github.com/CheeseAni/Subtitle-Production-Tutorial/tree/main/%5B004%5D%20%E8%A7%86%E9%9F%B3%E9%A2%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86#%E5%AD%97%E5%B9%95)
-  * [字幕文件](https://github.com/CheeseAni/Subtitle-Production-Tutorial/tree/main/%5B004%5D%20%E8%A7%86%E9%9F%B3%E9%A2%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86#%E5%AD%97%E5%B9%95%E6%96%87%E4%BB%B6)
-  * [字幕类型](https://github.com/CheeseAni/Subtitle-Production-Tutorial/tree/main/%5B004%5D%20%E8%A7%86%E9%9F%B3%E9%A2%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86#%E5%AD%97%E5%B9%95%E7%B1%BB%E5%9E%8B)
-* [字体](https://github.com/CheeseAni/Subtitle-Production-Tutorial/tree/main/%5B004%5D%20%E8%A7%86%E9%9F%B3%E9%A2%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86#%E5%AD%97%E4%BD%93)
+* [概述](#%E6%A6%82%E8%BF%B0)
+* [词典](#%E8%AF%8D%E5%85%B8)
+* [封装](#%E5%B0%81%E8%A3%85)
+* [视频](#%E8%A7%86%E9%A2%91)
+  * [图片压缩](#%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9)
+  * [视频压缩](#%E8%A7%86%E9%A2%91%E5%8E%8B%E7%BC%A9)
+* [音频](#%E9%9F%B3%E9%A2%91)
+* [字幕](#%E5%AD%97%E5%B9%95)
+  * [字幕文件](#%E5%AD%97%E5%B9%95%E6%96%87%E4%BB%B6)
+  * [字幕类型](#%E5%AD%97%E5%B9%95%E7%B1%BB%E5%9E%8B)
+* [字体](#%E5%AD%97%E4%BD%93)
 
 
 
