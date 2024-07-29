@@ -105,7 +105,7 @@ Dialogue: 0,0:00:13.00,0:00:15.00,Default,,0,0,0,,
 ```
 例如"Default"这个内容就对应着"Style"这个类型，也就是样式名，代表着这行以这个样式作为基础渲染。  
 
-> 行首为`Dialogue`表示这行会正常渲染，如果在Aegisub里将这行注释掉，如下图所示  
+> **行首为`Dialogue`表示这行会正常渲染，如果在Aegisub里将这行注释掉，如下图所示：**  
 > ![CommentLineinAegisub.avif](./Media/CommentLineinAegisub.avif)
 
 行首就会变成`Comment`，这行就不会渲染。
