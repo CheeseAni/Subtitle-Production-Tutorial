@@ -27,6 +27,6 @@
 
 
 ## 反馈与报错
-会使用GitHub者可以在[Issues](https://github.com/CheeseAni/Subtitle-Production-Tutorial/issues)中报错，如果不确定内容是否为错，可以在[Discussions](https://github.com/CheeseAni/Subtitle-Production-Tutorial/discussions)中讨论  
+会使用GitHub者可以在[Issues](issues)中报错，如果不确定内容是否为错，可以在[Discussions](https://github.com/CheeseAni/Subtitle-Production-Tutorial/discussions)中讨论  
 想提建议可以在[Discussions](https://github.com/CheeseAni/Subtitle-Production-Tutorial/discussions)中提  
 不会使用Github者可以加入[实时聊天软件](https://github.com/CheeseAni#%E4%BA%A4%E6%B5%81)的群聊
