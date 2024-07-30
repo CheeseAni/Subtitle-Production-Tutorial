@@ -47,4 +47,4 @@ Web源大多都是AAC，不过偶尔存在E-AC-3之类的更高音质源
 BD > Web > DVD > TV  
 常见Web源音质：  
 B >= CR ≈ Others (无杜比声情况下)  
-AMAZEN ≈ NF >= B >= CR ≈ Others (有杜比声情况下)
+AMZN ≈ NF >= B >= CR ≈ Others (有杜比声情况下)
