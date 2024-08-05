@@ -53,7 +53,7 @@ Getting help:
 
 `-h`输出的那短短几行字中就已经诠释了基本用法，但可能还是有理解障碍，所以这里写下一些基本的用法以及规律：  
 * FFmpeg命令行通过`-i`输入文件，一次可输入多个文件，跟在一次输入后的路径名算作一次输出，  
-  如`ffmpeg -i 1.mkv -i 2.mkv out.mkv，输入了名为1和2的两个mkv文件，输出了一个out.mkv。
+  如`ffmpeg -i 1.mkv -i 2.mkv out.mkvq，输入了名为1和2的两个mkv文件，输出了一个out.mkv。
 * 在输入前可以增加解码选项，输出前可以增加编码选项，
   如`ffmpeg -hwaccel vulkan -i 1.mkv -c:v hevc_qsv -i 2.mkv -map 0:v:0 -map 1:a:0 -c:v libx264 -preset slower -c:a libopus -b:a 128k output.mkv`，
   这行命令首先调用Vulkan API解码1.mkv，然后调用`hevc_qsv`解码器解码2.mkv，  
