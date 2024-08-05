@@ -60,8 +60,8 @@ Getting help:
   使用`-map 0:v:0`将0号输入，即1.mkv中的v类型流，即video(视频)流中的0号流作为输出，  
   同时`-map 1:a:0`将1号输入，即2.mkv中的a类型流，即audio(音频)流中的0号流作为输出，  
   `-c:v libx264 -preset slower`将视频编码器设置为libx264，x264的preset选项设置为slower，  
-  `-c:a libopus -b:a 128k`将音频编码器设置为libopus，音频码率设置为128k，
-  最终输出的output.mkv中有一个AVC视频流和一个Opus音频流
+  `-c:a libopus -b:a 128k`将音频编码器设置为libopus，音频码率设置为128k，  
+  最终输出的output.mkv中有一个AVC视频流和一个Opus音频流。
 
 
 
