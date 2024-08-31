@@ -25,14 +25,14 @@ Windows中有很多内置命令，如`echo`，通过`/?`选项可以查看这些
 
 Windows提供了一种纯文本文件作为cmd运行的脚本，后缀为`bat`，意为批处理文件，  
 新建一个txt文件，后缀改为bat，用记事本打开即可编辑，双击运行即可运行其中的命令，  
-如果命令中含有非ASCII字符，如中文，需要将文件另存为ANSI编码格式，或者更改cmd的1编码格式。
+如果命令中含有非ASCII字符，如中文，需要将文件另存为ANSI编码格式，或者使用`chcp`命令更改cmd的编码格式。
 
 
 
 ## FFmpeg入门
 如果你看过前面的文章，应该已经下载好了FFmpeg，  
 现在将FFmpeg放在一个合适的目录，在`path`中添加ffmpeg.exe所在的那个目录的路径，  
-OK，你可以在其他任意目录下运行FFmpeg了。  
+OK，现在你可以在其他任意目录下运行FFmpeg了。  
 键入`ffmpeg -version`查看当前版本，若成功即可正常使用。
 
 键入`ffmpeg -h`查看help，虽然是英文的，但丢给翻译程序还是很容易看懂的(前提是有充足的音视频基础知识)。  
@@ -53,15 +53,15 @@ Getting help:
 
 `-h`输出的那短短几行字中就已经诠释了基本用法，但可能还是有理解障碍，所以这里写下一些基本的用法以及规律：  
 * FFmpeg命令行通过`-i`输入文件，一次可输入多个文件，跟在一次输入后的路径名算作一次输出，  
-  如`ffmpeg -i 1.mkv -i 2.mkv out.mkvq，输入了名为1和2的两个mkv文件，输出了一个out.mkv。
+  如`ffmpeg -i 1.mkv -i 2.mkv out.mkv`，输入了名为`1.mkv`和`2.mkv`的两个mkv文件，输出了一个`out.mkv`。
 * 在输入前可以增加解码选项，输出前可以增加编码选项，  
   如`ffmpeg -hwaccel vulkan -i 1.mkv -c:v hevc_qsv -i 2.mkv -map 0:v:0 -map 1:a:0 -c:v libx264 -preset slower -c:a libopus -b:a 128k output.mkv`，  
-  这行命令首先调用Vulkan API解码1.mkv，然后调用`hevc_qsv`解码器解码2.mkv，  
-  使用`-map 0:v:0`将0号输入，即1.mkv中的v类型流，即video(视频)流中的0号流作为输出，  
-  同时`-map 1:a:0`将1号输入，即2.mkv中的a类型流，即audio(音频)流中的0号流作为输出，  
+  这行命令首先调用`Vulkan API`解码`1.mkv`，然后调用`hevc_qsv`解码器解码`2.mkv`，  
+  使用`-map 0:v:0`将0号输入，即`1.mkv`中的v类型流，即video(视频)流中的0号流作为输出，  
+  同时`-map 1:a:0`将1号输入，即`2.mkv`中的a类型流，即audio(音频)流中的0号流作为输出，  
   `-c:v libx264 -preset slower`将视频编码器设置为libx264，x264的preset选项设置为slower，  
   `-c:a libopus -b:a 128k`将音频编码器设置为libopus，音频码率设置为128k，  
-  最终输出的output.mkv中有一个AVC视频流和一个Opus音频流。
+  最终输出的`output.mkv`中有一个AVC视频流和一个Opus音频流。
 
 
 
