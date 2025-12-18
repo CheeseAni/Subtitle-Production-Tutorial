@@ -15,17 +15,17 @@ x265有多种码率控制模式，在我们所需要的压制中，使用CRF模�
 
 _取值列中，前面是取值范围，括号内是默认值_
 
-### 码率控制
+### 质量控制
 | 选项 | 取值 | 描述 | 效果 | 补充说明 |
 | :--: | :--: | :--: | :--: | :------: |
 | [crf](https://x265.readthedocs.io/en/master/cli.html#cmdoption-crf)           | 0..51.0  (28)  | 基于质量的VBR，控制整体质量 | 数值越大，整体质量越低         | crf间接控制P帧的qp |
 | [qpmin](https://x265.readthedocs.io/en/master/cli.html#cmdoption-qpmin)       |          (0)   | 限制P帧最低qp              |                               | 可以调高qpmin，降低过低crf下的过高质量帧的质量，以降低整体码率 |
 | [qpmax](https://x265.readthedocs.io/en/master/cli.html#cmdoption-qpmax)       |          (69)  | 限制P帧最高qp              |                               | 可以调低qpmax，提升过高crf下的过低质量帧的质量，以防止部分帧质量过低 |
 | [aq-mode](https://x265.readthedocs.io/en/master/cli.html#cmdoption-aq-mode)   | 0..4     (2)   | 控制自适应量化的模式        | 有效在保留纹理的同时提高压缩率 | 0关闭；<br>1均匀AQ；<br>2方差AQ，效果比1好但更慢；<br>3在2的基础上质量向暗场偏移；<br>4通过边缘检测调整方差，效果最好，但最慢 |
-| [cbqpoffs](https://x265.readthedocs.io/en/master/cli.html#cmdoption-cbqpoffs) | -12..12  (0)   | Chroma Cb QP Offset       | 控制Cb的质量                    | 可以调低Chroma的QP以弥补YUV420导致的Chroma平面画质的损失，当然，这会增加码率，建议[0,-3] |
-| [crqpoffs](https://x265.readthedocs.io/en/master/cli.html#cmdoption-crqpoffs) | -12..12  (0)   | Chroma Cr QP Offset       | 控制Cr的质量                    | 同上 |
+| [cbqpoffs](https://x265.readthedocs.io/en/master/cli.html#cmdoption-cbqpoffs) | -12..12  (0)   | Chroma Cb QP Offset       | 控制Cb的相对质量                | 可以调低Chroma的QP以弥补YUV420导致的Chroma平面画质的损失，当然，这会增加码率，建议[0,-3] |
+| [crqpoffs](https://x265.readthedocs.io/en/master/cli.html#cmdoption-crqpoffs) | -12..12  (0)   | Chroma Cr QP Offset       | 控制Cr的相对质量                | 同上 |
 | [ipratio](https://x265.readthedocs.io/en/master/cli.html#cmdoption-ipratio)   | 0..float (1.4) | I帧与P帧的QP差值           | 控制I帧相对P帧的质量            | 默认值挺合适的，没必要调，偶尔需要降低或升高I帧画质的话可以调 |
-| [pbratio](https://x265.readthedocs.io/en/master/cli.html#cmdoption-pbratio)   | 0..float (1.3) | I帧与P帧的QP差值           | 控制B帧相对P帧的质量            | 可以适当调低以提升B帧画质，建议[1.3,1.2] |
+| [pbratio](https://x265.readthedocs.io/en/master/cli.html#cmdoption-pbratio)   | 0..float (1.3) | P帧与B帧的QP差值           | 控制B帧相对P帧的质量            | 可以适当调低以提升B帧画质，建议[1.3,1.2] |
 
 ### 自适应量化
 | 选项 | 取值 | 描述 | 效果 | 补充说明 |
@@ -56,13 +56,13 @@ _取值列中，前面是取值范围，括号内是默认值_
 | [tu-inter-depth](https://x265.readthedocs.io/en/master/cli.html#cmdoption-tu-inter-depth) | 1..4                      (1) | CU间(帧间)的最大TU递归深度  | 提升压缩率，降低速率，可能会增高码率 | 建议性能够拉高就无脑最高 |
 | [limit-tu](https://x265.readthedocs.io/en/master/cli.html#cmdoption-limit-tu)             | 0..4                      (0) | 最大提前结束帧间TU递归的深度 | 有效提升速率，但略微降低压缩率      | 因为是自动计算递归终止的时机的，所以开启后对压缩率的降低效果甚微，但能大幅度提升高tu-inter-depth编码时的编码速率，建议2 |
 
-### Analysis
+### 率失真优化
 | 选项 | 取值 | 描述 | 效果 | 补充说明 |
 | :--: | :--: | :--: | :--: | :------: |
 | [rd](https://x265.readthedocs.io/en/master/cli.html#cmdoption-rd)                 | 1..6    (3) | 控制RD(Rate-Distortion)决策模式      | 显著提升压缩率，但降低速率 | 实测6压缩率比5低，所以只建议开5或3 |
-| [psy-rd](https://x265.readthedocs.io/en/master/cli.html#cmdoption-psy-rd)         | 0..5.0  (3) | RD的心理视觉优化强度                 | 提高码率，提升质量 | 简单来说就是一种预测人类视觉观感的算法，优先保证观感而不是图像的相似度，但实际效果并没有纸面上描述的那么美好，调高会导致码率同步升高，可以用来保留纹理，默认2，建议[1.6,2] |
-| [rdoq-level](https://x265.readthedocs.io/en/master/cli.html#cmdoption-rdoq-level) | 0..2    (0) | 控制RDOQ(Optimized Quantization)级别 | 显著保留纹理细节，但大幅降低速率 | 开的话建议开2，不建议开1，开启后码率升高，即使psy-rdoq=0，依然有效 |
-| [psy-rdoq](https://x265.readthedocs.io/en/master/cli.html#cmdoption-psy-rdoq)     | 0..50.0 (0) | RDOQ的心理视觉优化强度               | 开越高码率越高，类似psy-rd | 用来保留纹理的首要方式，建议[0,2]，不建议开高，因为开高对画质的优化不如直接调低CRF，甚至可以直接开0 |
+| [psy-rd](https://x265.readthedocs.io/en/master/cli.html#cmdoption-psy-rd)         | 0..5.0  (3) | RD的心理视觉优化强度                 | 提升视觉观感，但降低基于非视觉的压缩率 | rd>=3时生效；简单来说就是一种预测人类视觉观感的算法，优先保证观感而不是图像的相似度，但实际效果不一定很好，调高会导致码率同步升高，可以用来保留纹理，默认2，建议[1.6,2] |
+| [rdoq-level](https://x265.readthedocs.io/en/master/cli.html#cmdoption-rdoq-level) | 0..2    (0) | 控制RDOQ(Optimized Quantization)级别 | 显著保留纹理细节，但大幅降低速率 | 开的话建议开2，不建议开1，开启后码率升高 |
+| [psy-rdoq](https://x265.readthedocs.io/en/master/cli.html#cmdoption-psy-rdoq)     | 0..50.0 (0) | RDOQ的心理视觉优化强度               | 类似psy-rd | 可用于保留纹理，建议[0,2]，不建议开高，因为开高对画质的优化不如直接调低CRF，调成0也没啥问题 |
 
 ### Coding tool
 | 选项 | 取值 | 描述 | 效果 | 补充说明 |
@@ -78,8 +78,8 @@ _取值列中，前面是取值范围，括号内是默认值_
 ### 切片决策
 | 选项 | 取值 | 描述 | 效果 | 补充说明 |
 | :--: | :--: | :--: | :--: | :------: |
-| [open-gop](https://x265.readthedocs.io/en/master/cli.html#cmdoption-open-gop)         | bool      (1)   | 允许I帧可以为非IDR帧  | 略微提升压缩率，略微增加解码压力 | 一些HEVC普及早期的古董版本的解码软件可能不兼容，就像现在的解码器不兼容open-gop的AV1，现在无所谓了，所以开 |
+| [open-gop](https://x265.readthedocs.io/en/master/cli.html#cmdoption-open-gop)         | bool      (1)   | 允许I帧作为非IDR帧  | 略微提升压缩率，略微增加解码压力 | 一些HEVC普及早期的古董版本的解码器可能不兼容，现在无所谓了，所以开 |
 | [keyint](https://x265.readthedocs.io/en/master/cli.html#cmdoption-keyint)             | -1..int   (250) | 最大GOP帧数 | | 若为-1，无限GOP；过高会导致跳转播放时解码时间爆炸，建议[250,450]，特殊情况下可以通过降低keyint来保证画质(不建议) |
 | [min-keyint](https://x265.readthedocs.io/en/master/cli.html#cmdoption-min-keyint)     | 1..keyint (25)  | 最小GOP帧数 | | 建议[1,4] |
 | [rc-lookahead](https://x265.readthedocs.io/en/master/cli.html#cmdoption-rc-lookahead) | 1..250    (20)  | 切片类型决策前瞻的帧数 | 提升压缩率，有边际效应，略微降低速率 | 用于判断帧类型和QP等；该值不能低于最大连续B帧数；当值高于最大GOP后，多出的部分没有效果 |
-| [bframes](https://x265.readthedocs.io/en/master/cli.html#cmdoption-bframes)           | 0..16     (4)   | 最大连续B帧数         | 提升压缩率，降低速率 | 只要兼容，直接拉满就行 |
+| [bframes](https://x265.readthedocs.io/en/master/cli.html#cmdoption-bframes)           | 0..16     (4)   | 最大连续B帧数         | 大幅提升压缩率，大幅降低速率 | 只要兼容，直接拉满就行；同画质下B帧增多会大幅降低码率，这会增加解码的速率，而不是降低 |
