@@ -15,21 +15,17 @@ x265有多种码率控制模式，在我们所需要的压制中，使用CRF模�
 
 _取值列中，前面是取值范围，括号内是默认值_
 
-### 质量控制
+### 质量、码率、率失真
 | 选项 | 取值 | 描述 | 效果 | 补充说明 |
 | :--: | :--: | :--: | :--: | :------: |
 | [crf](https://x265.readthedocs.io/en/master/cli.html#cmdoption-crf)           | 0..51.0  (28)  | 基于质量的VBR，控制整体质量 | 数值越大，整体质量越低         | crf间接控制P帧的qp |
 | [qpmin](https://x265.readthedocs.io/en/master/cli.html#cmdoption-qpmin)       |          (0)   | 限制P帧最低qp              |                               | 可以调高qpmin，降低过低crf下的过高质量帧的质量，以降低整体码率 |
 | [qpmax](https://x265.readthedocs.io/en/master/cli.html#cmdoption-qpmax)       |          (69)  | 限制P帧最高qp              |                               | 可以调低qpmax，提升过高crf下的过低质量帧的质量，以防止部分帧质量过低 |
-| [aq-mode](https://x265.readthedocs.io/en/master/cli.html#cmdoption-aq-mode)   | 0..4     (2)   | 控制自适应量化的模式        | 有效在保留纹理的同时提高压缩率 | 0关闭；<br>1均匀AQ；<br>2方差AQ，效果比1好但更慢；<br>3在2的基础上质量向暗场偏移；<br>4通过边缘检测调整方差，效果最好，但最慢 |
 | [cbqpoffs](https://x265.readthedocs.io/en/master/cli.html#cmdoption-cbqpoffs) | -12..12  (0)   | Chroma Cb QP Offset       | 控制Cb的相对质量                | 可以调低Chroma的QP以弥补YUV420导致的Chroma平面画质的损失，当然，这会增加码率，建议[0,-3] |
 | [crqpoffs](https://x265.readthedocs.io/en/master/cli.html#cmdoption-crqpoffs) | -12..12  (0)   | Chroma Cr QP Offset       | 控制Cr的相对质量                | 同上 |
 | [ipratio](https://x265.readthedocs.io/en/master/cli.html#cmdoption-ipratio)   | 0..float (1.4) | I帧与P帧的QP差值           | 控制I帧相对P帧的质量            | 默认值挺合适的，没必要调，偶尔需要降低或升高I帧画质的话可以调 |
 | [pbratio](https://x265.readthedocs.io/en/master/cli.html#cmdoption-pbratio)   | 0..float (1.3) | P帧与B帧的QP差值           | 控制B帧相对P帧的质量            | 可以适当调低以提升B帧画质，建议[1.3,1.2] |
-
-### 自适应量化
-| 选项 | 取值 | 描述 | 效果 | 补充说明 |
-| :--: | :--: | :--: | :--: | :------: |
+| [aq-mode](https://x265.readthedocs.io/en/master/cli.html#cmdoption-aq-mode)   | 0..4     (2)   | 控制自适应量化的模式        | 有效在保留纹理的同时提高压缩率 | 0关闭；<br>1均匀AQ；<br>2方差AQ，效果比1好但更慢；<br>3在2的基础上质量向暗场偏移；<br>4通过边缘检测调整方差，效果最好，但最慢 |
 | [aq-strength](https://x265.readthedocs.io/en/master/cli.html#cmdoption-aq-strength) | 0..3.0 (1)     | 控制AQ的强度    | 调高可减少平面和纹理区域的遮挡和模糊   | 建议[0.8,1.2] |
 | [qcomp](https://x265.readthedocs.io/en/master/cli.html#cmdoption-qcomp)             | 0.5..1.0 (0.6) | 预测复杂度的权重 | 控制码率向动态画面(复杂残差)的偏移程度 | 调越高，静态画面分配到的码率越低，动态画面分配到的码率越高，所以调很高的话记得调低crf以弥补静态画面的码率损失，建议[0.65,0.75]，一般情况0.65足够<br>(因为是根据残差判断，所以值为1时，同CQP) |
 
