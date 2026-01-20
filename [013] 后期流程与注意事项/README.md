@@ -43,7 +43,7 @@
 
 正式编辑 ASS 的 Event 行前，一定要先编辑 Script Info，就像前面初识 ASS 的教程中提到的，Script Info 很重要，不提前设置好会导致你在制作样式时预览的颜色全是错的等一系列问题，后面补救就麻烦了。
 
-详见前面的教程，这里不重复写了。
+详见[前面的教程](https://github.com/CheeseAni/Subtitle-Production-Tutorial/tree/main/%5B005%5D%20%E5%88%9D%E8%AF%86%20ASS%20%26%20Aegisub#script-info)，这里不重复写了。
 
 ### 规划 Style
 
