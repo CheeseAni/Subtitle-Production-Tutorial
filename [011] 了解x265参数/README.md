@@ -60,7 +60,7 @@ x265有多种码率控制模式，在我们所需要的压制中，使用CRF模�
 | 选项 | 取值 | 描述 | 效果 | 补充说明 |
 | :--: | :--: | :--: | :--: | :------: |
 | [rd](https://x265.readthedocs.io/en/master/cli.html#cmdoption-rd)                 | 1..6    (3) | 控制RD(Rate-Distortion)决策模式      | 显著提升压缩率，但降低速率 | 实测6压缩率比5低，所以只建议开5或3 |
-| [psy-rd](https://x265.readthedocs.io/en/master/cli.html#cmdoption-psy-rd)         | 0..5.0  (3) | RD的心理视觉优化强度                 | 提升视觉观感，但降低基于非视觉的压缩率 | rd>=3时生效；简单来说就是一种预测人类视觉观感的算法，优先保证观感而不是图像的相似度，但实际效果不一定很好，调高会导致码率同步升高，可以用来保留纹理，默认2，建议[1.6,2] |
+| [psy-rd](https://x265.readthedocs.io/en/master/cli.html#cmdoption-psy-rd)         | 0..5.0  (2) | RD的心理视觉优化强度                 | 提升视觉观感，但降低基于非视觉的压缩率 | rd>=3时生效；简单来说就是一种预测人类视觉观感的算法，优先保证观感而不是图像的相似度，但实际效果不一定很好，调高会导致码率同步升高，可以用来保留纹理，建议[1.6,2] |
 | [rdoq-level](https://x265.readthedocs.io/en/master/cli.html#cmdoption-rdoq-level) | 0..2    (0) | 控制RDOQ(Optimized Quantization)级别 | 显著保留纹理细节，但大幅降低速率 | 开的话建议开2，不建议开1，开启后码率升高 |
 | [psy-rdoq](https://x265.readthedocs.io/en/master/cli.html#cmdoption-psy-rdoq)     | 0..50.0 (0) | RDOQ的心理视觉优化强度               | 类似psy-rd | 可用于保留纹理，建议[0,2]，不建议开高，因为开高对画质的优化不如直接调低CRF，调成0也没啥问题 |
 
